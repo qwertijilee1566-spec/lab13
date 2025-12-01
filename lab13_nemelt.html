@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iPhone GPS WebAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+  <!-- AR.js (location-based) -->
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.js"></script>
+
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+  <a-scene
+    vr-mode-ui="enabled: false"
+    embedded
+    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+
+    <!-- Location-based 3D object -->
+    <a-entity 
+      gps-entity-place="latitude: 47.918; longitude: 106.917;"
+      gltf-model="https://cdn.aframe.io/testmodels/models/tree/scene.gltf"
+      scale="5 5 5"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
+    </a-entity>
+
+    <!-- Camera -->
+    <a-camera gps-camera rotation-reader></a-camera>
+
+  </a-scene>
+
+</body>
+</html>
