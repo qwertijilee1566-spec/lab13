@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WebAR Cube Test</title>
+  <title>WebAR Cube Test (No GPS)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- A-Frame -->
@@ -16,19 +16,18 @@
   <a-scene
     embedded
     vr-mode-ui="enabled: false"
-    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+    arjs="sourceType: webcam; debugUIEnabled: false;">
 
-    <!-- Cube 3D object -->
+    <!-- Cube in front of the camera -->
     <a-box 
-      gps-entity-place="latitude: 0; longitude: 0"
-      position="0 0 2"
+      position="0 0 -2"  <!-- 2 meters in front of you -->
       color="blue"
       scale="1 1 1"
       animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
     </a-box>
 
     <!-- Camera -->
-    <a-camera gps-camera rotation-reader></a-camera>
+    <a-camera></a-camera>
 
   </a-scene>
 
