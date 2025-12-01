@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>iPhone GPS WebAR</title>
+  <title>iPhone WebAR Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- A-Frame -->
@@ -18,9 +18,10 @@
     embedded
     arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
 
-    <!-- Location-based 3D object -->
+    <!-- AR object always in front of user -->
     <a-entity 
-      gps-entity-place="latitude: 47.920472; longitude: 106.965254;"
+      gps-entity-place="latitude: 0; longitude: 0"
+      position="0 0 5"
       gltf-model="https://cdn.aframe.io/testmodels/models/tree/scene.gltf"
       scale="5 5 5"
       animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
