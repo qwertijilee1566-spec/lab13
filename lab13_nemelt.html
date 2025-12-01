@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>iPhone WebAR Test</title>
+  <title>WebAR Cube Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
-  <!-- AR.js (location-based) -->
+  <!-- AR.js -->
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.js"></script>
 
 </head>
 <body style="margin: 0; overflow: hidden;">
 
   <a-scene
-    vr-mode-ui="enabled: false"
     embedded
+    vr-mode-ui="enabled: false"
     arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
 
-    <!-- AR object always in front of user -->
-    <a-entity 
+    <!-- Cube 3D object -->
+    <a-box 
       gps-entity-place="latitude: 0; longitude: 0"
       position="0 0 2"
-      gltf-model="http://raw.githubusercontent.com/qwertijilee1566-spec/lab13/refs/heads/main/scene.gltf"
-      scale="0.5 0.5 0.5"
-      animation="property: rotation; to: 0 360 0; loop: true; dur: 8000">
-    </a-entity>
+      color="blue"
+      scale="1 1 1"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+    </a-box>
 
     <!-- Camera -->
     <a-camera gps-camera rotation-reader></a-camera>
@@ -34,7 +34,3 @@
 
 </body>
 </html>
-
-
-
-
